@@ -1,0 +1,46 @@
+body {
+  margin: 0;
+  background-image: url("background.svg");
+  background-size: 100% auto;
+  font-family: "Germania One", system-ui;
+  padding: 1.875em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  background-color: white;
+  border: 3px solid black;
+  width: 100%;
+  padding: 0.8rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+textarea {
+  resize: none;
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+button {
+  font-family: "Germania One", system-ui;
+  font-size: 1.5rem;
+}
