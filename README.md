@@ -4,11 +4,13 @@ A translation app that takes in English text and translates it to German, with t
 ![home-page](images/home-page.png "Home Page")
 
 ## In This Document:
-1. [Live Application URL](#live-application-url)
-2. [How to Use the Application](#how-to-use-the-application)
-3. [Technologies Used](#technologies-used)
-4. [Future Features](#future-features)
-5. [Challenges and Learning Points](#challenges-and-learning-points)
+- [Say It in German!](#say-it-in-german)
+  - [In This Document:](#in-this-document)
+  - [Live Application URL](#live-application-url)
+  - [How to Use the Application](#how-to-use-the-application)
+  - [Technologies Used](#technologies-used)
+  - [Future Features:](#future-features)
+  - [Challenges and Learning Points:](#challenges-and-learning-points)
 
 ## Live Application URL
 https://sayitingerman.netlify.app/
@@ -23,8 +25,9 @@ https://sayitingerman.netlify.app/
 
 ## Technologies Used
 1. HTML, CSS, and JavaScript.
-2. [OpenAI API](https://platform.openai.com/docs/introduction/overview)
-3. Progressive Web Apps methodology, using site.webmanifest file and icons.
+2. [OpenAI API](https://platform.openai.com/docs/introduction/overview) for the translation.
+3. [Eleven Labs API](https://elevenlabs.io/docs/api-reference/text-to-speech) for the TTS (Text to Speech).
+4. Progressive Web Apps methodology, using site.webmanifest file and icons.
 
 ## Future Features:
 1. The traveller can speak English into the app and the app would capture it in writing and do the translation to German automatically. 
