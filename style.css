@@ -32,6 +32,7 @@ textarea {
   resize: none;
   text-align: left;
   font-size: 1.25rem;
+  font-family: "Germania One", system-ui;
 }
 
 .buttons {
