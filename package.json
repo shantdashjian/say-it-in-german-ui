@@ -1,11 +1,8 @@
 {
-  "name": "Say It in German",
-  "version": "1.0.0",
-  "description": "The English to German translator and speaker.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "say-it-in-german-ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shantdashjian/say-it-in-german-ui.git"
@@ -17,10 +14,14 @@
   ],
   "author": "Shant Dashjian",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shantdashjian/say-it-in-german-ui/issues"
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "homepage": "https://github.com/shantdashjian/say-it-in-german-ui#readme",
+  "devDependencies": {
+    "vite": "^5.1.0"
+  },
   "dependencies": {
     "openai": "^4.28.0"
   }
