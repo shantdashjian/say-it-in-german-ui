@@ -2,6 +2,7 @@ import OpenAI from "openai";
 
 const translateBtn = document.getElementById('translate-btn')
 const speakBtn = document.getElementById('speak-btn')
+const clearBtn = document.getElementById('clear-btn')
 const englishTextArea = document.getElementById('english-text-area')
 const germanTextArea = document.getElementById('german-text-area')
 
@@ -51,4 +52,9 @@ speakBtn.addEventListener('click', async () => {
   catch(err) {
     console.error(err);
   }
+})
+
+clearBtn.addEventListener('click', () => {
+  englishTextArea.value = ''
+  germanTextArea.value = ''
 })
