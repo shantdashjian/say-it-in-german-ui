@@ -1,34 +1,26 @@
-import OpenAI from "openai";
-
 const translateBtn = document.getElementById('translate-btn')
 const speakBtn = document.getElementById('speak-btn')
 const clearBtn = document.getElementById('clear-btn')
 const englishTextArea = document.getElementById('english-text-area')
 const germanTextArea = document.getElementById('german-text-area')
 
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
-});
-
+const apiUrl = import.meta.env.VITE_API_URL
 const elevenLabsApiKey = import.meta.env.VITE_ELEVEN_LABS_API_KEY
 
 translateBtn.addEventListener('click', async () => {
   const englishText = englishTextArea.value 
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [
-      {
-        "role": "system",
-        "content": "You are an English to German translator."
-      },
-      {
-        "role": "user",
-        "content": "Translate this: " + englishText 
-      }
-    ],
-  });
-  germanTextArea.value = response.choices[0].message.content
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+      "englishText": englishText
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  let response = await fetch(apiUrl + 'translate', options)
+  response = await response.json()
+  germanTextArea.value = response.germanText
 })
 
 speakBtn.addEventListener('click', async () => {
