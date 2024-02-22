@@ -58,7 +58,6 @@ function History() {
         }
         try {
             await fetch(apiUrl + 'translation/' + id, options)
-            console.log('deleted')
             setTranslations(prev => prev.filter(translation => translation.id != id))
         }
         catch (err) {
