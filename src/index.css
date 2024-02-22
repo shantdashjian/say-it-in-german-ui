@@ -4,6 +4,7 @@ body {
   background-size: 100% auto;
   font-family: "Germania One", system-ui;
   padding: 1.875em;
+  --light-background: #d7d2d2;
 }
 
 * {
@@ -27,6 +28,13 @@ body {
 .header {
   font-size: 2.5rem;
   text-align: center;
+  background-color: var(--light-background);
+}
+
+.sub-header {
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: var(--light-background);
 }
 
 textarea {
@@ -42,9 +50,16 @@ textarea {
   justify-content: space-between;
 }
 
+.buttom-buttons {
+  display: flex;
+  justify-content: center;
+}
+
 button {
   font-family: "Germania One", system-ui;
   font-size: 1.5rem;
+  width: fit-content !important;
+  background-color: var(--light-background) !important;
 }
 
 @media (min-width: 768px) {
