@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Say It in German</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
@@ -17,27 +16,8 @@
 </head>
 
 <body>
-  <div class="main-container">
-    <header>
-      <div class="box header">
-        Say It in German
-      </div>
-    </header>
-    <main class="container">
-      <section>
-        <textarea class="box" id="english-text-area" cols="30" rows="9"></textarea>
-      </section>
-      <section class="buttons">
-        <button class="box" id="translate-btn">Translate</button>
-        <button class="box" id="speak-btn"><i class="fa-solid fa-volume-high"></i></button>
-        <button class="box" id="clear-btn">Clear</button>
-      </section>
-      <section>
-        <textarea class="box" id="german-text-area" cols="30" rows="9"></textarea>
-      </section>
-    </main>
-    <script type="module" src="/index.js"></script>
-  </div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 
 </html>
