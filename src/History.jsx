@@ -26,13 +26,30 @@ function History() {
         fetchData()
     }, [apiUrl])
 
-    function handleHighlight(id) {
-        setTranslations(prev => prev.map(
-            translation => translation.id === id ?
-                { ...translation, highlighted: !translation.highlighted }
-                : translation
-        )
-        )
+    async function handleHighlight(id) {
+        const translation = {...translations.find(translation => translation.id === id)}
+        translation.highlighted = !translation.highlighted
+        const options = {
+            method: 'PUT',
+            body: JSON.stringify(translation),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        try {
+            let response = await fetch(apiUrl + 'translation/' + id, options)
+            response = await response.json()
+            setTranslations(prev => prev.map(
+                translation => translation.id === id ?
+                    response.translation
+                    : translation
+            )
+            )
+        }
+        catch (err) {
+            console.error(err);
+        }
+        
     }
 
     function handleDelete(id) {
