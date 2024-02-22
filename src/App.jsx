@@ -32,25 +32,27 @@ function App() {
     }
 
     async function handleSpeak() {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Accept': 'audio/mpeg',
-                'xi-api-key': elevenLabsApiKey,
-                'Content-Type': 'application/json'
-            },
-            body: `{"model_id":"eleven_multilingual_v2","text": "${germanText}"}`
-        };
+        if (germanText !== '') {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'audio/mpeg',
+                    'xi-api-key': elevenLabsApiKey,
+                    'Content-Type': 'application/json'
+                },
+                body: `{"model_id":"eleven_multilingual_v2","text": "${germanText}"}`
+            };
 
-        try {
-            const response = await fetch('https://api.elevenlabs.io/v1/text-to-speech/pNInz6obpgDQGcFmaJgB?output_format=mp3_22050_32', options)
-            const mp3Data = await response.blob();
-            const mp3Url = URL.createObjectURL(mp3Data);
-            const audio = new Audio(mp3Url);
-            audio.play();
-        }
-        catch (err) {
-            console.error(err);
+            try {
+                const response = await fetch('https://api.elevenlabs.io/v1/text-to-speech/pNInz6obpgDQGcFmaJgB?output_format=mp3_22050_32', options)
+                const mp3Data = await response.blob();
+                const mp3Url = URL.createObjectURL(mp3Data);
+                const audio = new Audio(mp3Url);
+                audio.play();
+            }
+            catch (err) {
+                console.error(err);
+            }
         }
     }
 
