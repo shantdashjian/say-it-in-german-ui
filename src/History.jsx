@@ -52,8 +52,18 @@ function History() {
         
     }
 
-    function handleDelete(id) {
-        setTranslations(prev => prev.filter(translation => translation.id != id))
+    async function handleDelete(id) {
+        const options = {
+            method: 'DELETE'
+        }
+        try {
+            await fetch(apiUrl + 'translation/' + id, options)
+            console.log('deleted')
+            setTranslations(prev => prev.filter(translation => translation.id != id))
+        }
+        catch (err) {
+            console.error(err);
+        }
     }
 
     return (
