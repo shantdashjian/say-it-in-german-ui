@@ -93,6 +93,15 @@ button {
   padding: 0.5rem;
 }
 
+.empty-history {
+  background-color: white;
+  border: 3px solid black;
+  width: fit-content;
+  padding: 0.8rem;
+  font-size: 2rem;
+  align-self: center;
+}
+
 @media (min-width: 768px) {
   .main-container {
     width: 768px;

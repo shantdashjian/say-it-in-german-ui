@@ -1,59 +1,43 @@
 import { useNavigate } from 'react-router-dom'
 import Translation from './Translation'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function History() {
+    const [apiUrl] = useState(import.meta.env.VITE_API_URL)
     const navigate = useNavigate()
 
     function goToHome() {
         navigate('/');
     }
 
-    const [translations, setTranslations] = useState([
-        {
-            id: 1,
-            english: 'hello',
-            german: 'hallo',
-            highlighted: false
-        },
-        {
-            id: 2,
-            english: 'country',
-            german: 'Land',
-            highlighted: true
-        },
-        {
-            id: 3,
-            english: 'man',
-            german: 'Mann',
-            highlighted: false
-        },
-    ])
+    const [translations, setTranslations] = useState(null)
+
+    useEffect(() => {
+        async function fetchData() {
+            try {
+                let response = await fetch(apiUrl + 'translation')
+                response = await response.json()
+                setTranslations(response.translations)
+            }
+            catch (err) {
+                console.error(err);
+            }
+        }
+        fetchData()
+    }, [apiUrl])
 
     function handleHighlight(id) {
-        console.log('highlight')
         setTranslations(prev => prev.map(
             translation => translation.id === id ?
                 { ...translation, highlighted: !translation.highlighted }
                 : translation
-            )
+        )
         )
     }
 
     function handleDelete(id) {
-        console.log('delete')
         setTranslations(prev => prev.filter(translation => translation.id != id))
     }
-
-    const translationsList = translations.map(
-        translation =>
-            <Translation
-                key={translation.id}
-                data={translation}
-                handleHighlight={() => handleHighlight(translation.id)}
-                handleDelete={() => handleDelete(translation.id)}
-            />
-    )
 
     return (
         <main className="container">
@@ -63,7 +47,15 @@ function History() {
             <div className="box sub-header">
                 History
             </div>
-            {translations.length > 0 ? translationsList : <div>No History</div>}
+            {translations === null ? null : translations.length > 0 ? translations.map(
+                translation =>
+                    <Translation
+                        key={translation.id}
+                        data={translation}
+                        handleHighlight={() => handleHighlight(translation.id)}
+                        handleDelete={() => handleDelete(translation.id)}
+                    />
+            ) : <div className='empty-history'>There are no translations in your history!</div>}
         </main>
     );
 }

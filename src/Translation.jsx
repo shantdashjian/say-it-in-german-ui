@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 function Translation(props) {
-
     const text = `"${props.data.english}" translates to "${props.data.german}"`
 
     function handleHighlight() {

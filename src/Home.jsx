@@ -8,6 +8,7 @@ function Home() {
     const navigate = useNavigate()
 
     const apiUrl = import.meta.env.VITE_API_URL
+    
     const elevenLabsApiKey = import.meta.env.VITE_ELEVEN_LABS_API_KEY
 
     async function handleTranslate() {
