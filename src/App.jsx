@@ -21,7 +21,7 @@ function App() {
             }
             try {
 
-                let response = await fetch(apiUrl + 'translate', options)
+                let response = await fetch(apiUrl + 'translation', options)
                 response = await response.json()
                 setGermanText(response.germanText)
             }
