@@ -2,6 +2,7 @@
 A translation app that takes in English text and translates it to German, with the option of speaking it as well. It is built with React, and powered by OpenAI. 
 
 ![home-page](public/home-page.png "Home Page")
+![history-page](public/history-page.png "History Page")
 
 ## In This Document:
 - [Say It in German!](#say-it-in-german)
@@ -16,12 +17,21 @@ A translation app that takes in English text and translates it to German, with t
 https://sayitingerman.netlify.app/
 
 ## How to Use the Application
+### Home Page
 1. A traveller to Germany opens the app.
 2. The traveller writes the phrase in English.
 3. The traveller clicks on Translate.
 4. The app should show the translation in English.
 5. The traveller can click on the Speak button and the app should read the translation.
 6. The traveller can click on Clear to clear the input area and start over.
+   
+### History Page
+1. The traveller clicks on Manage History.
+2. The History page should open.
+3. There the traveller can see past translations, with the most recent at the top.
+4. The traveller could highlight a transation to mark it as "revisit".
+5. The traveller could delete a translation from history.
+6. The traveller could Go Back Home to the Home page.
 
 ## Technologies Used
 1. React.
