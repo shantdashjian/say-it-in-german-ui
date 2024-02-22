@@ -5,6 +5,7 @@ body {
   font-family: "Germania One", system-ui;
   padding: 1.875em;
   --light-background: #d7d2d2;
+  --highlighted-background: rgb(173, 213, 244);
 }
 
 * {
@@ -60,6 +61,36 @@ button {
   font-size: 1.5rem;
   width: fit-content !important;
   background-color: var(--light-background) !important;
+}
+
+.translation {
+  text-align: left;
+  font-size: 1.25rem;
+  font-family: "Germania One", system-ui;
+  background-color: white;
+  border: 3px solid black;
+  width: 100%;
+  padding: 0.8rem 0rem 0rem 0rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.highlighted {
+  background-color: var(--highlighted-background);
+}
+
+.translation-text {
+  padding: 0 0.8rem;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icons i {
+  padding: 0.5rem;
 }
 
 @media (min-width: 768px) {
