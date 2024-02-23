@@ -71,7 +71,7 @@ function Home() {
     return (
         <main className="container">
             <section>
-                <textarea className="box" value={englishText} onChange={(e) => setEnglishText(e.target.value)} rows="6"></textarea>
+                <textarea className="box" value={englishText} onChange={(e) => setEnglishText(e.target.value)} rows="4"></textarea>
             </section>
             <section className="buttons">
                 <button className="box" onClick={handleTranslate}>Translate</button>
@@ -79,7 +79,7 @@ function Home() {
                 <button className="box" onClick={handleClear}>Clear</button>
             </section>
             <section>
-                <textarea className="box" value={germanText} onChange={(e) => setGermanText(e.target.value)} rows="6"></textarea>
+                <textarea className="box" value={germanText} onChange={(e) => setGermanText(e.target.value)} rows="4"></textarea>
             </section>
             <section className="buttom-buttons">
                 <button onClick={goToHistory} className="box">Manage History</button>
