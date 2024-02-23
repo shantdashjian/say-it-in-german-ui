@@ -8,7 +8,7 @@ function Home() {
     const navigate = useNavigate()
 
     const apiUrl = import.meta.env.VITE_API_URL
-    
+
     const elevenLabsApiKey = import.meta.env.VITE_ELEVEN_LABS_API_KEY
 
     async function handleTranslate() {
@@ -70,17 +70,13 @@ function Home() {
 
     return (
         <main className="container">
-            <section>
-                <textarea className="box" value={englishText} onChange={(e) => setEnglishText(e.target.value)} rows="4"></textarea>
-            </section>
+            <textarea className="box" value={englishText} onChange={(e) => setEnglishText(e.target.value)}></textarea>
             <section className="buttons">
                 <button className="box" onClick={handleTranslate}>Translate</button>
                 <button className="box" onClick={handleSpeak}><i className="fa-solid fa-volume-high"></i></button>
                 <button className="box" onClick={handleClear}>Clear</button>
             </section>
-            <section>
-                <textarea className="box" value={germanText} onChange={(e) => setGermanText(e.target.value)} rows="4"></textarea>
-            </section>
+            <textarea className="box" value={germanText} onChange={(e) => setGermanText(e.target.value)}></textarea>
             <section className="buttom-buttons">
                 <button onClick={goToHistory} className="box">Manage History</button>
             </section>

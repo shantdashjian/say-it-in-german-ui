@@ -1,7 +1,9 @@
 body {
   margin: 0;
-  background-image: url("./assets/background.svg");
-  background-size: 100% auto;
+  background-image: url("./assets/background-10.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: "Germania One", system-ui;
   padding: 1.875em;
   --light-background: #d7d2d2;
@@ -20,10 +22,18 @@ body {
 }
 
 
-.main-container, .container {
+.main-container,
+.container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+}
+
+.main-container {
+  gap: 2.5rem;
+}
+
+.container {
+  gap: 1rem;
 }
 
 .header {
@@ -43,6 +53,7 @@ textarea {
   text-align: left;
   font-size: 1.25rem;
   font-family: "Germania One", system-ui;
+  height: 20vh;
 }
 
 .buttons {
@@ -52,6 +63,7 @@ textarea {
 }
 
 .buttom-buttons {
+  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
 }
@@ -104,7 +116,7 @@ button {
 
 @media (min-width: 768px) {
   .main-container {
-    width: 768px;
+    width: 600px;
     margin-left: auto;
     margin-right: auto;
   }

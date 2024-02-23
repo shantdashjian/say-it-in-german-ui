@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="600"
+   height="1000"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="background.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3">
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       x="-0.06"
+       width="1.12"
+       y="-0.036"
+       height="1.072"
+       inkscape:label="Ink Blot"
+       id="filter848">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="10 10"
+         result="blur1"
+         id="feGaussianBlur847" />
+      <feTurbulence
+         type="fractalNoise"
+         baseFrequency="0.04"
+         numOctaves="3"
+         seed="0"
+         result="turbulence"
+         id="feTurbulence847" />
+      <feDisplacementMap
+         in="blur1"
+         in2="turbulence"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="50"
+         result="map"
+         id="feDisplacementMap847" />
+      <feGaussianBlur
+         in="map"
+         stdDeviation="5"
+         result="blur2"
+         id="feGaussianBlur848" />
+      <feComposite
+         in="blur2"
+         in2="map"
+         operator="over"
+         result="composite"
+         id="feComposite848" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       x="-0.09"
+       width="1.18"
+       y="-0.036"
+       height="1.072"
+       inkscape:label="Ink Blot"
+       id="filter850">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="10 10"
+         result="blur1"
+         id="feGaussianBlur849" />
+      <feTurbulence
+         type="fractalNoise"
+         baseFrequency="0.04"
+         numOctaves="3"
+         seed="0"
+         result="turbulence"
+         id="feTurbulence849" />
+      <feDisplacementMap
+         in="blur1"
+         in2="turbulence"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="50"
+         result="map"
+         id="feDisplacementMap849" />
+      <feGaussianBlur
+         in="map"
+         stdDeviation="5"
+         result="blur2"
+         id="feGaussianBlur850" />
+      <feComposite
+         in="blur2"
+         in2="map"
+         operator="over"
+         result="composite"
+         id="feComposite850" />
+    </filter>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       x="-0.18"
+       width="1.36"
+       y="-0.036"
+       height="1.072"
+       inkscape:label="Ink Blot"
+       id="filter852">
+      <feGaussianBlur
+         in="SourceGraphic"
+         stdDeviation="10 10"
+         result="blur1"
+         id="feGaussianBlur851" />
+      <feTurbulence
+         type="fractalNoise"
+         baseFrequency="0.04"
+         numOctaves="3"
+         seed="0"
+         result="turbulence"
+         id="feTurbulence851" />
+      <feDisplacementMap
+         in="blur1"
+         in2="turbulence"
+         xChannelSelector="R"
+         yChannelSelector="G"
+         scale="50"
+         result="map"
+         id="feDisplacementMap851" />
+      <feGaussianBlur
+         in="map"
+         stdDeviation="5"
+         result="blur2"
+         id="feGaussianBlur852" />
+      <feComposite
+         in="blur2"
+         in2="map"
+         operator="over"
+         result="composite"
+         id="feComposite852" />
+    </filter>
+  </defs>
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.24289426"
+     inkscape:cx="187.32431"
+     inkscape:cy="518.74425"
+     inkscape:window-width="840"
+     inkscape:window-height="525"
+     inkscape:window-x="-50"
+     inkscape:window-y="31"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3" />
+  <rect
+     width="600"
+     height="1000"
+     id="rect1"
+     fill="#ffce0d"
+     style="filter:url(#filter848)" />
+  <rect
+     width="400"
+     height="1000"
+     id="rect2"
+     fill="#db0c1b"
+     style="filter:url(#filter850)" />
+  <rect
+     width="200"
+     height="1000"
+     id="rect3"
+     style="filter:url(#filter852)" />
+</svg>
