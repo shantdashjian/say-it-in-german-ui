@@ -4,6 +4,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: "Germania One", system-ui;
   padding: 1.875em;
   --light-background: #d7d2d2;
