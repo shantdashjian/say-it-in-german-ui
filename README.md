@@ -5,8 +5,6 @@ A translation app that takes in English text and translates it to German, with t
 ![history-page](public/history-page.png "History Page")
 
 ## In This Document:
-- [Say It in German!](#say-it-in-german)
-  - [In This Document:](#in-this-document)
   - [Live Application URL](#live-application-url)
   - [How to Use the Application](#how-to-use-the-application)
   - [Technologies Used](#technologies-used)
