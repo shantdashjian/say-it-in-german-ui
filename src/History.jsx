@@ -37,14 +37,14 @@ function History() {
             }
         }
         try {
-            let response = await fetch(apiUrl + 'translation/' + id, options)
-            response = await response.json()
             setTranslations(prev => prev.map(
                 translation => translation.id === id ?
                     response.translation
                     : translation
             )
             )
+            let response = await fetch(apiUrl + 'translation/' + id, options)
+            response = await response.json()
         }
         catch (err) {
             console.error(err);
