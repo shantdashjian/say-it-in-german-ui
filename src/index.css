@@ -31,7 +31,8 @@ body {
 }
 
 .main-container {
-  gap: 2.5rem;
+  margin-top: 2rem;
+  gap: 3.5rem;
 }
 
 .container {
@@ -65,7 +66,6 @@ textarea {
 }
 
 .buttom-buttons {
-  margin-top: 1.5rem;
   display: flex;
   justify-content: center;
 }
