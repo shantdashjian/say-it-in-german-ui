@@ -100,7 +100,7 @@ button {
 
 .icons {
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 .icons i {

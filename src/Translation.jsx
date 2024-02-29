@@ -6,20 +6,20 @@ function Translation(props) {
         props.handleHighlight()
     }
 
-    function handleDelete() {
+    function handleDelete(e) {
+        e.stopPropagation()
         props.handleDelete()
     }
 
     const tanslationClassNames = "translation " + (props.data.highlighted ? "highlighted" : "")
     
     return (
-        <div className={tanslationClassNames}>
+        <div className={tanslationClassNames} onClick={handleHighlight}>
             <div className="translation-text">
                 {text}
             </div>
             <div className="icons">
-                <i onClick={handleHighlight} className="fa-solid fa-lightbulb"></i>
-                <i onClick={handleDelete} className="fa-solid fa-trash"></i>
+                <i onClick={(e) => handleDelete(e)} className="fa-solid fa-trash"></i>
             </div>
         </div>
     );
