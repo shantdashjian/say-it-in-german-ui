@@ -1,15 +1,15 @@
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import volumeHighIconUrl from './assets/volume-high-solid.svg'
+import PropTypes from 'prop-types'
 
-function Home() {
+function Home({ translations, updateTranslations }) {
 
     const [englishText, setEnglishText] = useState('')
     const [germanText, setGermanText] = useState('')
     const navigate = useNavigate()
 
     const apiUrl = import.meta.env.VITE_API_URL
-
     const elevenLabsApiKey = import.meta.env.VITE_ELEVEN_LABS_API_KEY
 
     async function handleTranslate() {
@@ -27,8 +27,7 @@ function Home() {
                 let response = await fetch(apiUrl + 'translation', options)
                 response = await response.json()
                 setGermanText(response.german)
-                const newTranslations = [response, ...(JSON.parse(localStorage.getItem('translations')))]
-                localStorage.setItem('translations', JSON.stringify(newTranslations))
+                updateTranslations([response, ...translations])
             }
             catch (err) {
                 console.error(err);
@@ -85,5 +84,10 @@ function Home() {
         </main>
     )
 }
+
+Home.propTypes = {
+    translations: PropTypes.array.isRequired,
+    updateTranslations: PropTypes.func.isRequired
+};
 
 export default Home

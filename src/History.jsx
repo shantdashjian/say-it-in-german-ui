@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import Translation from './Translation'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
+import PropTypes from 'prop-types'
 
-function History() {
+function History({ translations, updateTranslations }) {
     const [apiUrl] = useState(import.meta.env.VITE_API_URL)
     const navigate = useNavigate()
 
@@ -10,20 +11,8 @@ function History() {
         navigate('/');
     }
 
-    const [translations, setTranslations] = useState(null)
-
-    useEffect(() => {
-        if (translations !== null) {
-            localStorage.setItem('translations', JSON.stringify(translations))
-        }
-    }, [translations])
-
-    useEffect(() => {
-        setTranslations(JSON.parse(localStorage.getItem('translations')))
-    }, [apiUrl])
-
     async function handleHighlight(id) {
-        const translation = {...translations.find(translation => translation.id === id)}
+        const translation = { ...translations.find(translation => translation.id === id) }
         translation.highlighted = !translation.highlighted
         const options = {
             method: 'PUT',
@@ -33,9 +22,9 @@ function History() {
             }
         }
         try {
-            setTranslations(prev => prev.map(
+            updateTranslations(translations.map(
                 translation => translation.id === id ?
-                    {...translation, highlighted: !translation.highlighted}
+                    { ...translation, highlighted: !translation.highlighted }
                     : translation
             )
             )
@@ -45,7 +34,7 @@ function History() {
         catch (err) {
             console.error(err);
         }
-        
+
     }
 
     async function handleDelete(id) {
@@ -53,7 +42,7 @@ function History() {
             method: 'DELETE'
         }
         try {
-            setTranslations(prev => prev.filter(translation => translation.id != id))
+            updateTranslations(translations.filter(translation => translation.id != id))
             await fetch(apiUrl + 'translation/' + id, options)
         }
         catch (err) {
@@ -81,5 +70,10 @@ function History() {
         </main>
     );
 }
+
+History.propTypes = {
+    translations: PropTypes.array.isRequired,
+    updateTranslations: PropTypes.func.isRequired
+};
 
 export default History;
