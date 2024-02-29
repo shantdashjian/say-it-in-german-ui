@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
+import volumeHighIconUrl from './assets/volume-high-solid.svg'
 
 function Home() {
 
@@ -73,7 +74,7 @@ function Home() {
             <textarea className="box" value={englishText} onChange={(e) => setEnglishText(e.target.value)}></textarea>
             <section className="buttons">
                 <button className="box" onClick={handleTranslate}>Translate</button>
-                <button className="box" onClick={handleSpeak}><i className="fa-solid fa-volume-high"></i></button>
+                <button className="box speak-box" onClick={handleSpeak}><img className="speak-btn" src={volumeHighIconUrl} alt="Speak" /></button>
                 <button className="box" onClick={handleClear}>Clear</button>
             </section>
             <textarea className="box" value={germanText} onChange={(e) => setGermanText(e.target.value)}></textarea>

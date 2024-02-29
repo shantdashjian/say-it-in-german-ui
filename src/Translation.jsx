@@ -19,7 +19,7 @@ function Translation(props) {
                 {text}
             </div>
             <div className="icons">
-                <i onClick={(e) => handleDelete(e)} className="fa-solid fa-trash"></i>
+                <div className="delete-btn" onClick={(e) => handleDelete(e)}></div>
             </div>
         </div>
     );
