@@ -1,3 +1,8 @@
+@font-face {
+  font-family: GermaniaOne;
+  src: url('./assets/GermaniaOne-Regular.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   background-image: url("./assets/background-10.svg");
@@ -5,7 +10,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Germania One", system-ui;
+  font-family: GermaniaOne, system-ui;
   padding: 1.875em;
   --light-background: #d7d2d2;
   --highlighted-background: rgb(173, 213, 244);
@@ -55,7 +60,7 @@ textarea {
   resize: none;
   text-align: left;
   font-size: 1.25rem;
-  font-family: "Germania One", system-ui;
+  font-family: GermaniaOne, system-ui;
   height: 20vh;
 }
 
@@ -71,7 +76,7 @@ textarea {
 }
 
 button {
-  font-family: "Germania One", system-ui;
+  font-family: GermaniaOne, system-ui;
   font-size: 1.5rem;
   width: fit-content !important;
   background-color: var(--light-background) !important;
@@ -89,7 +94,7 @@ button {
 .translation {
   text-align: left;
   font-size: 1.25rem;
-  font-family: "Germania One", system-ui;
+  font-family: GermaniaOne, system-ui;
   background-color: white;
   border: 3px solid black;
   width: 100%;
