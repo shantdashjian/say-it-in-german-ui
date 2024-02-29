@@ -13,17 +13,13 @@ function History() {
     const [translations, setTranslations] = useState(null)
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                let response = await fetch(apiUrl + 'translation')
-                response = await response.json()
-                setTranslations(response.translations)
-            }
-            catch (err) {
-                console.error(err);
-            }
+        if (translations !== null) {
+            localStorage.setItem('translations', JSON.stringify(translations))
         }
-        fetchData()
+    }, [translations])
+
+    useEffect(() => {
+        setTranslations(JSON.parse(localStorage.getItem('translations')))
     }, [apiUrl])
 
     async function handleHighlight(id) {

@@ -24,10 +24,11 @@ function Home() {
                 }
             }
             try {
-
                 let response = await fetch(apiUrl + 'translation', options)
                 response = await response.json()
-                setGermanText(response.germanText)
+                setGermanText(response.german)
+                const newTranslations = [response, ...(JSON.parse(localStorage.getItem('translations')))]
+                localStorage.setItem('translations', JSON.stringify(newTranslations))
             }
             catch (err) {
                 console.error(err);
