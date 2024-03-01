@@ -4,7 +4,6 @@ import Home from './Home';
 import History from './History';
 
 function App() {
-    const [apiUrl] = useState(import.meta.env.VITE_API_URL)
     const [translations, setTranslations] = useState([])
 
     function updateTranslations(translations) {
@@ -12,6 +11,8 @@ function App() {
     }
 
     useEffect(() => {
+        const apiUrl = import.meta.env.VITE_API_URL
+
         async function fetchData() {
             try {
                 let response = await fetch(apiUrl + 'translation')
@@ -23,7 +24,7 @@ function App() {
             }
         }
         fetchData()
-    }, [apiUrl])
+    }, [])
 
     return (
         <div className="main-container">
