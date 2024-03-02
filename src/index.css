@@ -1,6 +1,11 @@
+@font-face {
+  font-family: 'Germania One';
+  src: url('./assets/GermaniaOne-Regular.ttf');
+}
+
 body {
   margin: 0;
-  background-image: url("./assets/background-10.svg");
+  background-image: url("./assets/background.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
